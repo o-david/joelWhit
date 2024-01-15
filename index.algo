@@ -1,0 +1,43 @@
+ALGORITHM calc
+VAR
+    sent:STRING
+    counter, totalChar, totalVowels : INTEGER:=0;
+    totalWords : INTEGER:=1;
+    
+BEGIN
+    Read(sent) //"James like food."
+
+    WHILE (sent[counter] <> ".") DO
+        counter:= counter+1
+        IF (sent[counter]= " ") THEN
+            totalWords:= totalWords+1
+        END_IF
+        IF (sent[counter]= "a") THEN
+            totalVowels:= totalVowels+1
+        END_IF
+        IF (sent[counter]= "e") THEN
+            totalVowels:= totalVowels+1
+        END_IF
+        IF (sent[counter]= "i") THEN
+            totalVowels:= totalVowels+1
+        END_IF
+        IF (sent[counter]= "o") THEN
+            totalVowels:= totalVowels+1
+        END_IF
+        IF (sent[counter]= "u") THEN
+            totalVowels:= totalVowels+1
+        END_IF
+
+
+    END_WHILE
+    totalChar:= counter +1
+END
+
+
+SWITCH (sent[counter]) DO
+    case a : 
+    case e : 
+    case i : 
+    case o : 
+    case u : totalVowels:= totalVowels+1
+END_SWITCH
